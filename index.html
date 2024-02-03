@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    section {
+      display: flex;
+      flex-wrap: no-wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin: 0;
+      overflow: hidden;
+      width:100%;
+      height:auto;
+    }
+    .accordions-area {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 50%;
+      height: auto;
+    }
+    .accordion {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .accordion h2 {
+      margin: 0;
+    }
+    .accordion-content {
+      display: none;
+      padding: 10px;
+    }
+    .image-changing-container {
+      width: 50%;
+      height: auto;
+      overflow: hidden;
+    }
+    .image-changing-container img {
+      width: 100%;
+      height: auto;
+    }
+    .second-image, .third-image {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+ 
+<section>
+  <div class="accordions-area">
+    <div class="accordion">  
+      <h2>heading1</h2>
+      <div class="accordion-content">
+        <p>This code will create an accordion with three tabs. The tabs will be collapsible, meaning that they can be opened and closed. The first tab will be active by default.</p>
+      </div>
+    </div>
+    <div class="accordion">  
+      <h2>heading2</h2>
+      <div class="accordion-content">
+        <p>This code will create an accordion with three tabs. The tabs will be collapsible, meaning that they can be opened and closed. The first tab will be active by default.</p>
+      </div>
+    </div>
+    <div class="accordion">  
+      <h2>heading3</h2>
+      <div class="accordion-content">
+        <p>This code will create an accordion with three tabs. The tabs will be collapsible, meaning that they can be opened and closed. The first tab will be active by default.</p>
+      </div>
+    </div>
+  </div>
+  <div class="image-changing-container"> 
+    <img class="first-image" src="https://avirafertility.com/wp-content/uploads/2024/02/2-5.png">
+    <img class="second-image" src="https://avirafertility.com/wp-content/uploads/2024/02/1-4.png">
+    <img class="third-image" src="https://avirafertility.com/wp-content/uploads/2024/01/Test-tube-baby-jpg.webp">
+  </div>
+</section>
+
+<script>
+  $(document).ready(function(){
+    $('.accordion').click(function(){
+      // Hide all images initially
+      $('.image-changing-container img').hide();
+      
+      // Hide all accordion contents
+      $('.accordion-content').hide();
+      
+      // Show the clicked accordion content
+      $(this).find('.accordion-content').slideDown('fast');
+      
+      // If the first accordion is active, show the first image
+      if ($(this).index() === 0) {
+        $('.first-image').show();
+      }
+      
+      // If the second accordion is active, show the second image
+      if ($(this).index() === 1) {
+        $('.second-image').show();
+      }
+      
+      // If the third accordion is active, show the third image
+      if ($(this).index() === 2) {
+        $('.third-image').show();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
