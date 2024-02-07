@@ -2,7 +2,11 @@
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
     section {
      
       width:100%;
@@ -16,7 +20,7 @@
      display: flex;
      flex-wrap: no-wrap;
      justify-content: center;
-     align-items: stretch;
+     align-items: center;
      gap: 40px;
      overflow: hidden;
 
@@ -30,17 +34,18 @@
       padding: 40px;
     }
     .accordion {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
       cursor: pointer;
     }
     .accordion h2 {
       margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: #9da3ad;
     }
     .accordion-content {
       display: none;
-      padding: 10px;
+      padding: 0px;
     }
     .image-changing-container {
       width: 50%;
@@ -55,6 +60,21 @@
     .second-image, .third-image {
       display: none;
     }
+    .accordion.active {
+  background-color: #f2f3f3; /* Add your desired background color */
+  border: 1px solid #f7f7f7; /* Add your desired border style */
+  padding:20px;
+
+  border-radius: 20px;
+}
+.accordion.active h2{
+  color: #272a2f;
+}
+p{
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  line-height: 1.9em;
+}
   </style>
 </head>
 <body>
@@ -63,60 +83,67 @@
   <div class="accordions-container"> 
   <div class="accordions-area">
     <div class="accordion">  
-      <h2>heading1</h2>
+      <h2>Generate & qualify leads</h2>
       <div class="accordion-content">
-        <p>This code will create an accordion with three tabs. The tabs will be collapsible, meaning that they can be opened and closed. The first tab will be active by default.</p>
+        <p>Create captivating quizzes, fillable forms, and calculators to produce personalized results, custom price quotes, and tailored product/service recommendations. Direct users to specific outcomes with unique messaging to enhance your contact profiles.</p>
       </div>
     </div>
     <div class="accordion">  
-      <h2>heading2</h2>
+      <h2>Automate sales processes</h2>
       <div class="accordion-content">
-        <p>This code will create an accordion with three tabs. The tabs will be collapsible, meaning that they can be opened and closed. The first tab will be active by default.</p>
+        <p>Publish product recommendation quizzes, product finders, price quote calculators and entire sales funnels that show custom service & product offerings to your prospective buyers. Advise your customers in an engaging way and help them make purchase decisions more easily. Personalize the sales process and even close the deal right on the spot using our integrated payment forms.</p>
       </div>
     </div>
     <div class="accordion">  
-      <h2>heading3</h2>
+      <h2>Increase user engagement</h2>
       <div class="accordion-content">
-        <p>This code will create an accordion with three tabs. The tabs will be collapsible, meaning that they can be opened and closed. The first tab will be active by default.</p>
+        <p>Create engaging personality quizzes, knowledge quizzes, professional-looking forms for promotions and giveaways that increase engagement and time spent on site. Captivate users with built-in scores, instant feedback, and personalized outcomes.</p>
       </div>
     </div>
   </div>
   <div class="image-changing-container"> 
-    <img class="first-image" src="https://avirafertility.com/wp-content/uploads/2024/02/2-5.png">
-    <img class="second-image" src="https://avirafertility.com/wp-content/uploads/2024/02/1-4.png">
-    <img class="third-image" src="https://avirafertility.com/wp-content/uploads/2024/01/Test-tube-baby-jpg.webp">
+    <img class="first-image" src="https://www.involve.me/img/containers/assets/home/gruppe-maskieren-62.png/ecec1950fdbfe551e6ee040289a01be2.webp">
+    <img class="second-image" src="https://www.involve.me/img/containers/assets/home/gruppe-maskieren-60.png/dd91ce076285a3fb09cfe8c94401f28a.webp">
+    <img class="third-image" src="https://www.involve.me/img/containers/assets/home/gruppe-maskieren-57-1679475028.png/ed483231d9ad873ed160a9b7aa61685b.webp">
   </div>
 </div>
 </section>
 
 <script>
   $(document).ready(function(){
-    $('.accordion').click(function(){
-      // Hide all images initially
-      $('.image-changing-container img').hide();
-      
-      // Hide all accordion contents
-      $('.accordion-content').hide();
-      
-      // Show the clicked accordion content
-      $(this).find('.accordion-content').slideDown('fast');
-      
-      // If the first accordion is active, show the first image
-      if ($(this).index() === 0) {
-        $('.first-image').show();
-      }
-      
-      // If the second accordion is active, show the second image
-      if ($(this).index() === 1) {
-        $('.second-image').show();
-      }
-      
-      // If the third accordion is active, show the third image
-      if ($(this).index() === 2) {
-        $('.third-image').show();
-      }
-    });
+  $('.accordion').click(function(){
+    // Hide all images initially
+    $('.image-changing-container img').hide();
+    
+    // Hide all accordion contents
+    $('.accordion-content').hide();
+    
+    // Remove active class from all accordions
+    $('.accordion').removeClass('active');
+    
+    // Add active class to the clicked accordion
+    $(this).addClass('active');
+    
+    // Show the clicked accordion content
+    $(this).find('.accordion-content').slideDown('fast');
+    
+    // If the first accordion is active, show the first image
+    if ($(this).index() === 0) {
+      $('.first-image').show();
+    }
+    
+    // If the second accordion is active, show the second image
+    if ($(this).index() === 1) {
+      $('.second-image').show();
+    }
+    
+    // If the third accordion is active, show the third image
+    if ($(this).index() === 2) {
+      $('.third-image').show();
+    }
   });
+});
+
 </script>
 
 </body>
