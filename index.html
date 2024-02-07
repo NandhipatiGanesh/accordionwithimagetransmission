@@ -4,15 +4,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <style>
     section {
-      display: flex;
-      flex-wrap: no-wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 40px;
-      margin: 0;
-      overflow: hidden;
+     
       width:100%;
       height:auto;
+    }
+    .accordions-container{
+     width: 80%;
+     height: auto;
+     margin-left: auto;
+     margin-right: auto;
+     display: flex;
+     flex-wrap: no-wrap;
+     justify-content: center;
+     align-items: stretch;
+     gap: 40px;
+     overflow: hidden;
+
     }
     .accordions-area {
       display: flex;
@@ -20,6 +27,7 @@
       gap: 20px;
       width: 50%;
       height: auto;
+      padding: 40px;
     }
     .accordion {
       border: 1px solid #ccc;
@@ -38,6 +46,7 @@
       width: 50%;
       height: auto;
       overflow: hidden;
+      padding: 40px;
     }
     .image-changing-container img {
       width: 100%;
@@ -51,6 +60,7 @@
 <body>
  
 <section>
+  <div class="accordions-container"> 
   <div class="accordions-area">
     <div class="accordion">  
       <h2>heading1</h2>
@@ -76,6 +86,7 @@
     <img class="second-image" src="https://avirafertility.com/wp-content/uploads/2024/02/1-4.png">
     <img class="third-image" src="https://avirafertility.com/wp-content/uploads/2024/01/Test-tube-baby-jpg.webp">
   </div>
+</div>
 </section>
 
 <script>
